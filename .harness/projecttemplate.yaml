@@ -3,7 +3,7 @@ template:
   identifier: projecttemplate
   versionLabel: v2
   type: Step
-  projectIdentifier: DoNotDelete_Amit
+  projectIdentifier: TF_Pipeline_Test
   orgIdentifier: default
   tags: {}
   spec:
