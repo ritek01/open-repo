@@ -1,7 +1,7 @@
 pipeline:
   name: gitx
   identifier: gitx
-  projectIdentifier: TF_Pipeline_Test
+  projectIdentifier: TF_GitX_Pipeline_Test
   orgIdentifier: default
   tags: {}
   stages:
