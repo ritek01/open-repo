@@ -3,7 +3,7 @@ inputSet:
   tags: {}
   identifier: inputset
   orgIdentifier: default
-  projectIdentifier: TF_Pipeline_Test
+  projectIdentifier: TF_InputSet_Pipeline_Test
   pipeline:
     identifier: DoNotDeletePipeline
     stages:
