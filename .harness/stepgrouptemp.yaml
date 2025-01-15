@@ -1,0 +1,45 @@
+pipeline:
+  name: stepgrouptemp
+  identifier: stepgrouptemp
+  projectIdentifier: V
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: s1
+        identifier: s1
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Kubernetes
+          service:
+            serviceRef: ECR_SERVICE
+            serviceInputs:
+              serviceDefinition:
+                type: Kubernetes
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+          environment:
+            environmentRef: ENV
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: infr2
+          execution:
+            steps:
+              - step:
+                  name: s123
+                  identifier: s123
+                  template:
+                    templateRef: account.steptemp
+                    versionLabel: v1
+            rollbackSteps: []
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
